@@ -12,7 +12,7 @@ Java Socket통신을 사용한 응용프로그램 만들기.<br>
 
 개발 툴	: Eclipse<br>
 <br>
-개발 기술 : JAVA, Oracle, mybatis<br>
+개발 기술 : JAVA, Oracle, mybatis, JSON <br>
 <br>
 프로젝트 기간	: 2019. 05 .15 ~ 2019.05.25 <br>
 
