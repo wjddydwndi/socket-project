@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+  	<resultMap type="Board" id="BoardAll">
+  		<id column="board_id" property="board_id"/>
+  		<result column="content" property="content"/>
+  		<result column="filename" property="filename"/>
+  		<association column="member_id" property="member" javaType="Member" select="Member.select"/>
+  	</resultMap>
+  
+  	<!-- 글 한건 등록 -->
+  	<insert id="insert" parameterType="Board" >
+  		insert into Board(board_id,member_id,content,filename) values(seq_board.nextval,#{member.member_id},#{content},#{filename})
+  		
+  		<selectKey  order="AFTER" resultType="int" keyProperty="board_id">
+  			select seq_board.currval as board_id from dual
+  		</selectKey>
+  		
+  	</insert>
+  	
+  	<select id="selectAll" resultMap="BoardAll">
+  		select * from Board
+  	</select>
+  	
+
+</mapper>

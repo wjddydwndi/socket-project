@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="B_Comment">
+	<resultMap type="B_Comment" id="B_CommentAll">
+		<id column="b_comment_id" property="b_comment_id"/>
+		<result column="board_id" property="board_id"/>
+		<result column="content" property="content"/>
+		<result column="credate" property="credate"/>
+		<association column="member_id" property="member" javaType="Member" select="Member.select"/>
+	
+	</resultMap>
+
+  	<insert id="insert" parameterType="B_Comment" >
+  		insert into b_comment(b_comment_id,board_id,member_id,content) values(seq_b_comment.nextval,#{board_id},#{member.member_id},#{content})
+  	</insert>
+  	
+  	<select id="selectAll" parameterType="B_Comment" resultMap="B_CommentAll">
+  		select * from b_comment where board_id = #{board_id}
+  	</select>
+</mapper>
