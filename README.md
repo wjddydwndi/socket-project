@@ -82,7 +82,7 @@ Java Socket통신을 사용한 응용프로그램 만들기.<br>
 <br>
 <img src="https://postfiles.pstatic.net/MjAxOTA1MzFfMjU3/MDAxNTU5MjU0OTE5MTEz.laj8olXa-g4A7pqVXVoG_PznTmD0Ekd90uP_W_niHGUg.X2p78rtspBM-r5rsvl33ZfWTrDtfl4VHY2DfgpDi14Yg.PNG.wjddydwndi/4.png?type=w773" width="100%">
 <br>
-<h3> Client 요청 전달 순서</h3>
+<h3> Client 요청 처리 순서</h3>
 <ul> - 해당페이지에서, 각각 요청에 맞는<p> Request클래스</p>로 요청에 필요한 값을 전달.</ul>
 <ul> - 값을 전달받은 <p>Request클래스</p>는 <p>JSON형식으로 변환 후,</p> IO Stream을 이용하여, Server로 송신.</ul>
 <ul> - Server측에서 값을 송신하면, 접속자마다 생성된 <p>ClientThread클래스<p>의 Listen() 메서드에서 읽어들임.</ul>
@@ -92,6 +92,14 @@ Java Socket통신을 사용한 응용프로그램 만들기.<br>
 <br>
 
 <img src="https://postfiles.pstatic.net/MjAxOTA1MzFfMyAg/MDAxNTU5MjU0OTIxMDc0.oOOyqDrpNrS1wyUNVc8vLhiG42hUlzQIEkHpcfp7-j0g.TPGd62VWBGEo6zEabBsBmd32de4W5xTZKaNxNSBOcJog.PNG.wjddydwndi/5.png?type=w773" width="100%">
+<br>
+<h3> Server 요청 처리 순서 </h3>
+<ul> - Client의 <p>Request클래스</p>에서 송신한 요청을 <p>ServerThread클래스</p>의 Listen()메서드로 수신.</ul>
+<ul> L <p>ServerThread클래스</p> 역시, ClientThread클래스와 마찬가지로, IO Stream을 이용하여 Listen()메서드를 정의.</ul>
+<ul> - <p>Listen()메서드</p>에서 읽어들인 String형의 자료를 <p>ServerDispatcher클래스</p>로 전달.</ul>
+<ul> - <p>ServerDispatcher클래스</p>의 distribute()메서드에서 넘겨받은 String형의 자료를 JSON형식으로 파싱.</ul>
+<ul> - JSON형식의 자료의 requestType을 조사하여, 해당 요청사항에 맞는 <p>Controller클래스</p>로 JSON객체를 전달.</ul>
+<ul> - <p>해당 Controller 클래스</p>에서 요청에 맞는 처리 후, 다시 Client측으로, 송신.</ul>
 <img src="https://postfiles.pstatic.net/MjAxOTA1MzFfNzgg/MDAxNTU5MjU0OTIyOTM2.CLqWr61xeQrbYYhiqEM8tKN1Yc3KgFry3pxZKdqd1zcg.KaW_85FmPMnZMik2qZ0mPhvqot-_mHxD0mVB-BmtV48g.PNG.wjddydwndi/6.png?type=w773" width="100%">
 
 
