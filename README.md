@@ -1,9 +1,12 @@
 # socket-project
 
 
-프로젝트 주제	: Java Socket통신을 사용한 응용프로그램 만들기.<br>
+프로젝트 주제	: <br>
+Java Socket통신을 사용한 응용프로그램 만들기.<br>
 <br>
-프로젝트 설명 : 로그인 처리를 통하여, 유저마다 자신의 사진 및 글이 담긴 게시물을 게시.<br>
+프로젝트 설명 : <br>
+소켓통신을 이용한 SNS 응용프로그램 구현<br>
+로그인 처리를 통하여, 유저마다 자신의 사진 및 글이 담긴 게시물을 게시.<br>
 각 게시물마다 로그인 계정으로 댓글 작성 가능.<br>
 <br>
 
@@ -78,7 +81,15 @@
 <ul> L Server 측, Thread는 접속자 수만큼 생성되어, List에 주입.</ul>
 <br>
 <img src="https://postfiles.pstatic.net/MjAxOTA1MzFfMjU3/MDAxNTU5MjU0OTE5MTEz.laj8olXa-g4A7pqVXVoG_PznTmD0Ekd90uP_W_niHGUg.X2p78rtspBM-r5rsvl33ZfWTrDtfl4VHY2DfgpDi14Yg.PNG.wjddydwndi/4.png?type=w773" width="100%">
-
+<br>
+<h3> Client 요청 전달 순서</h3>
+<ul> - 해당페이지에서, 각각 요청에 맞는<p> Request클래스</p>로 요청에 필요한 값을 전달.</ul>
+<ul> - 값을 전달받은 <p>Request클래스</p>는 <p>JSON형식으로 변환 후,</p> IO Stream을 이용하여, Server로 송신.</ul>
+<ul> - Server측에서 값을 송신하면, 접속자마다 생성된 <p>ClientThread클래스<p>의 Listen() 메서드에서 읽어들임.</ul>
+<ul> - Listen()메서드에서 읽어들인 String값은 <p>ClientDistributor</p>로 전달. </ul>
+<ul> - <p>ClientDistributor</p>클래스 distribute()메서드에서 String형태를 다시 JSON형식으로 파싱하여, requestType을 구별하여, 해당 <p>Controller클래스</p>로 JSON객체를 전달.</ul>
+<ul> - <p>해당 Controller클래스</p>에서 Server로부터 넘겨받은 값을 처리.</ul>
+<br>
 
 <img src="https://postfiles.pstatic.net/MjAxOTA1MzFfMyAg/MDAxNTU5MjU0OTIxMDc0.oOOyqDrpNrS1wyUNVc8vLhiG42hUlzQIEkHpcfp7-j0g.TPGd62VWBGEo6zEabBsBmd32de4W5xTZKaNxNSBOcJog.PNG.wjddydwndi/5.png?type=w773" width="100%">
 <img src="https://postfiles.pstatic.net/MjAxOTA1MzFfNzgg/MDAxNTU5MjU0OTIyOTM2.CLqWr61xeQrbYYhiqEM8tKN1Yc3KgFry3pxZKdqd1zcg.KaW_85FmPMnZMik2qZ0mPhvqot-_mHxD0mVB-BmtV48g.PNG.wjddydwndi/6.png?type=w773" width="100%">
