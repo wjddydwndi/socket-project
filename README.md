@@ -17,8 +17,8 @@
 <br>
 <img src="https://postfiles.pstatic.net/MjAxOTA1MzFfMjEg/MDAxNTU5MjUwNDYyNDM0.2Otf2bddtZ0Cds_WQKZnyJwJ0LyH7jGlpnx7ibmmpAgg.eq2RJ_dG7G1b9VDVgVh3kF5UW-mJEVkpFcV481eShmYg.PNG.wjddydwndi/%EC%9D%B4%EB%AF%B8%EC%A7%80_0.png?type=w773" width="100%">
 
-<h3>디자인</h3>
-<ul>ㅇㅇㅇ</ul>
-<ul>ㅇㅇㅇ</ul>
-<ul>ㅇㅇㅇ</ul>
-<ul>ㅇㅇㅇ</ul>
+<h3>[ 디자인 ]</h3>
+<ul>- Java swing을 사용한 GUI 구현</ul>
+<ul>- java.util.io 사용한 이미지 처리</ul>
+<ul>- JFileChooser를 사용한 파일 선택 구현</ul>
+<ul></ul>
