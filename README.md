@@ -100,6 +100,8 @@ Java Socket통신을 사용한 응용프로그램 만들기.<br>
 <ul> - <p>ServerDispatcher클래스</p>의 distribute()메서드에서 넘겨받은 String형의 자료를 JSON형식으로 파싱.</ul>
 <ul> - JSON형식의 자료의 requestType을 조사하여, 해당 요청사항에 맞는 <p>Controller클래스</p>로 JSON객체를 전달.</ul>
 <ul> - <p>해당 Controller 클래스</p>에서 요청에 맞는 처리 후, 다시 Client측으로, 송신.</ul>
+<br>
+<h3> Example </h3>
 <img src="https://postfiles.pstatic.net/MjAxOTA1MzFfNzgg/MDAxNTU5MjU0OTIyOTM2.CLqWr61xeQrbYYhiqEM8tKN1Yc3KgFry3pxZKdqd1zcg.KaW_85FmPMnZMik2qZ0mPhvqot-_mHxD0mVB-BmtV48g.PNG.wjddydwndi/6.png?type=w773" width="100%">
 
 
