@@ -57,10 +57,29 @@
 <h3> ① </h3>
 <ul> - 쓰레드를 이용하여, 서버 가동.  </ul>
 <ul> - while문을 사용하여, 계속하여, 접속자를 받아들일 수 있는 환경 조성. </ul>
-<ul> - 서버측의 Thread를 만듦으로써, 클라이언트 측의 송신을 계속 하여, 읽어들이도록 처리. </ul>
-<ul> - List배열을 이용하여, 접속자들의 퇴장 및 입장을 처리.</ul>
+<ul> - 서버측의 Thread를 생성하므로써, 클라이언트 측의 송신을 계속 하여, 읽어들이도록 처리. </ul>
+<ul> - List Collection을 이용하여, 접속자들의 퇴장 및 입장을 처리.</ul>
+<br>
+<h3> ② </h3>
+<ul> - Server측의 ip,port 번호를 사용하여, 접속.</ul>
+<ul> - 접속 시, Thread를 생성하여, 서버측 송신을 계속하여, 읽어들이도록 처리.</ul>
+<br>
 <img src="https://postfiles.pstatic.net/MjAxOTA1MzFfMjY2/MDAxNTU5MjU1MDExOTM4.baYC2ONg2wj49DNDfEE9jdE9J100D1qGrZNbG6FrOmog.Qxcbs70GIQDiL5ZOW3oBOLryIyUcpWvkc8ENj3cY2zgg.PNG.wjddydwndi/3.png?type=w773" width="100%">
+<br>
+<h3> ① </h3>
+<ul> - Server , Client 각각 IO 를 생성하여, 정보를 송/수신 할 수 있는환경 조성</ul>
+<ul> cf ) Stream을 종료 시, 접속이 끊김.</ul>
+<br>
+<h3> ② </h3>
+<ul> - List Collection을 이용하여, Client들의 접속, 종료 처리.</ul>
+<h3> ③ </h3>
+<ul> - Server / Client 모두 Thread 클래스를 상속받은 클래스를 정의하여, 계속하여 수신할 수 있는 환경을 조성</ul>
+<ul> L Listen()이라는 IO 메서드를 정의하여, 계속하여, 양측의 정보를 수신.</ul>
+<ul> L Server 측, Thread는 접속자 수만큼 생성되어, List에 주입.</ul>
+<br>
 <img src="https://postfiles.pstatic.net/MjAxOTA1MzFfMjU3/MDAxNTU5MjU0OTE5MTEz.laj8olXa-g4A7pqVXVoG_PznTmD0Ekd90uP_W_niHGUg.X2p78rtspBM-r5rsvl33ZfWTrDtfl4VHY2DfgpDi14Yg.PNG.wjddydwndi/4.png?type=w773" width="100%">
+
+
 <img src="https://postfiles.pstatic.net/MjAxOTA1MzFfMyAg/MDAxNTU5MjU0OTIxMDc0.oOOyqDrpNrS1wyUNVc8vLhiG42hUlzQIEkHpcfp7-j0g.TPGd62VWBGEo6zEabBsBmd32de4W5xTZKaNxNSBOcJog.PNG.wjddydwndi/5.png?type=w773" width="100%">
 <img src="https://postfiles.pstatic.net/MjAxOTA1MzFfNzgg/MDAxNTU5MjU0OTIyOTM2.CLqWr61xeQrbYYhiqEM8tKN1Yc3KgFry3pxZKdqd1zcg.KaW_85FmPMnZMik2qZ0mPhvqot-_mHxD0mVB-BmtV48g.PNG.wjddydwndi/6.png?type=w773" width="100%">
 
